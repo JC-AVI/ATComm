@@ -1,0 +1,7 @@
+            body        { background-color: rgb(255, 255, 238); padding: 1%;  font-size: 36; }
+            label#clr   { display:inline-block; width: 136px; padding-left: 5px; padding-right: 5px; }
+            td          { width: 180px; }
+            th          { width: 150px; text-align: right; background-color: #D3D3D3; padding-right:5px; }
+            td.warn     { background-color: red;        text-align: center; }
+            td.OK       { background-color: lightgreen; text-align: center; }
+            .frq        { width: 38px; }
