@@ -6,30 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Soren Merser">
         <meta name="year" content="May 2020">
-        <link rel="stylesheet" href="index.css">
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <script>
-            $(document).on("keydown", ":input:not(#note)", function(e){
-            if(e.which == 13 || e.which == 190) {
-                e.preventDefault();
-                $("#clr").text( $("#dst").val() );
-                var i = $(":input").index(this);
-                if(e.shiftKey)
-                    $(":input").eq(i-1).focus();
-                else
-                    $(":input").eq(i+1).focus();
-                }
-            });
-        </script>
+        <script src="js/index.js"></script>
+        <link rel="stylesheet" href="css/index.css">
     </head>
 
     <body>
 
-
-        <?php
-            echo "Hi, I'm a PHP script!";
-        ?>
-	<h1>Hej kaptajn hr.Christensen</h1>
+    <h1>Hej hr. kaptajn J Christensen</h1>
 
        <table>
             <caption><h3>Route</h3></caption>
