@@ -2,19 +2,27 @@
 <html>
     <head>
         <title>ATC communication</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Soren Merser">
-        <meta name="year" content="May 2020">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+        <style>
+            body { background-color: rgb(255, 255, 238); padding: 1%;  font-size: 36; }
+            label#clr { display:inline-block; width: 136px; padding-left: 5px; padding-right: 5px; }
+            td { width: 150px; }
+            th { width: 150px; text-align: right; background-color: #D3D3D3; padding-right:5px; }
+            td.warn { background-color: red;        text-align: center; }
+            td.OK   { background-color: lightgreen; text-align: center; }
+            input   { width: 140px; }
+        </style>
         <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-        <script src="js/index.js"></script>
+      <script src="js/index.js"></script>
         <link rel="stylesheet" href="css/index.css">
         <link rel="icon" href="favicon.ico">
-    </head>
+
+       </head>
 
     <body>
 
-   
+<h2>CP Flightplan</h2>
+
        <table>
             <caption><h3>Route</h3></caption>
             <tr>
@@ -29,21 +37,18 @@
             </tr>
         </tabel>
 
-
-
         <table>
             <caption><h3>Initial contact</h3></caption>
                 <tr>
                 <th>ATC</th><td><input />
                 </td><td>
                     <select>
-                        <option>Control</option>
-                        <option>Center</option>
+                        <option>Delivery</option>
                         <option>Ground</option>
                         <option>Apron</option>
-                        <option>Departure</option>
-                        <option>Delivey</option>
                         <option>Tower</option>
+                        <option>Control</option>
+                        <option>Center</option>
                         <option>Approach</option>
                     </select>
                 </td>
@@ -55,8 +60,9 @@
                 <th>Stand</th><td><input /></td>
             </tr><tr>
                 <th>Information</th>
-                <td><input /></td>
-<!--                    <td><select>
+<!--                <td><input /></td>  -->
+
+                    <td><select>
                         <option><option selected>---------</option>
                         <option>Alfa</option><option>Bravo</option><option>Charlie</option>
                         <option>Delta</option><option>Ekko</option><option>Foxtrot</option>
@@ -68,7 +74,6 @@
                         <option>Victor</option><option>Whiskey</option><option>X-ray</option>
                         <option>Yankee</option><option>Zulu</option>
                     </select></td>
--->
             </tr><tr>
                 <th>Destination</th><td><input id="dst" /></td>
             </tr>
@@ -78,24 +83,20 @@
         <table>
              <caption><h3>Clearence</h3></caption>
             <tr>
-                <th>Cleared flightplan for</th><td><label id="clr"> </label></td>
+                <th>Cleared flightplan for</th><td colspan="2"><label id="clr"> </label></td>
             </tr><tr>
-                <th>Via</th><td><input /></td>
+                <th>Via (SID)</th><td colspan="2"><input /></td>
             </tr><tr>
-                <th>Runway</th><td><input /></td>
+                <th>Runway</th><td colspan="2"><input /></td>
             </tr><tr>
-                <th>Init climb</th><td><input /> ft</td>
-            </tr><tr>
-                <th>Squawk</th><td><input /></td>
-            </tr><tr>
-                <th>QNH</th><td><input /></td>
-            </tr><tr>
-                <th>Airborne frq</th>
-                <td>
-                   <input class="frq" pattern="[0-9]{3}" /> decimal <input class="frq" pattern="[0-9]{3}" />
+                <th>Initial climb (ft)</th><td colspan="2"><input />
                 </td>
             </tr><tr>
-                <td colspan="4">&nbsp;</td>
+                <th>Squawk</th><td colspan="2"><input /></td>
+            </tr><tr>
+                <th>QNH</th><td colspan="2"'><input /></td>
+            </tr><tr>
+                <th>Airborne frq</th><td colspan="2"><input /></td>
             </tr>
         </table>
 
@@ -107,7 +108,7 @@
             </tr>
         </table>
 
-            <table>
+        <table>
             <caption><h3>Taxi information</h3></caption>
             <tr>
                 <th>Holdingpoint</th><td><input /></td>
@@ -116,38 +117,92 @@
             </tr><tr>
                 <th>Hold before</th><td><input /></td>
             </tr><tr>
-                <th>Cross RNW</th><td><input /></td>
+                <th>Cross Rnw</th><td><input /></td>
             </tr><tr>
                 <th>Yield</th><td><input /></td>
             </tr><tr>
-                <th>Behind</th><td><input /></td>
+                <th>Behind</th><td><input placeholder="line up and wait behind arriving company aircraft, behind" /></td>
             </tr><tr>
                 <th>Other</th><td><input /></td>
             </tr>
         </table>
 
-
-            <table>
-            <caption><h3>Initial climb</h3></caption>
+        <table>
+            <caption><h3>Airborne</h3></caption>
             <tr>
-                <th>Passing</th><td><input /> ft</td>
+                <td colspan="2"><th>Frequency</th>
             </tr><tr>
-                <th>For</th><td><input /> ft</td>
+                <th>Contact</th>
+                <td><input /></td>
+                <td><input /></td>
             </tr><tr>
-                <th>On (SID)</th><td><input /></td>
+                <th>Passing</th><td colspan="3"'><input /> ft</td>
+            </tr><tr>
+                <th>For</th><td colspan="3"><input /> ft</td>
+            </tr><tr>
+                <th>On (SID)</th><td colspan="3"><input /></td>
              </tr><tr>
-                <th>Inbound (waypoint)</th><td><input /></td>
+                <th>Inbound (waypoint)</th><td colspan="3"><input /></td>
             </tr><tr>
-                <th>Heading</th><td><input /></td>
+                <th>Heading</th><td colspan="3"><input /></td>
             </tr>
         </table>
 
-    <table>
+        <table>
+            <caption><h3>Cruising</h3></caption>
+            <tr>
+                <td colspan="2"></td><th>Frequency</th>
+            </tr><tr>
+                <th>Contact</th>
+                <td><input /></td>
+                <td><input /></td>
+            </tr><tr>
+                <th>Flight Level</th>
+                <td colspan="23"><input /></td>
+            </tr><tr>
+                <th>Inbound</th>
+                <td colspan="2"><input /></td>
+             </tr>
+        </table>
+
+        <table>
+            <caption><h3>Approach</h3></caption>
+            <tr>
+                 <td colspan="2"></td><th>Frequency</th>
+            </tr><tr>
+                <th>Contact</th>
+                <td><input /></td>
+                <td><input /></td>
+            </tr><tr>
+                <th>Fligt Level</th>
+                <td colspan="2"><input /></td>
+            </tr><tr>
+                <th>Information</th>
+                <td colspan="2"><input /></td>
+            </tr><tr>
+                <th>QNH</th><td><input /></td>
+            </tr><tr>
+                <th>Inbound (STAR)</th>
+                <td colspan="2"><input /></td>
+            </tr><tr>
+            </tr><tr>
+                <th>Runway / ILS</th>
+                <td><input /></td>
+                <td><input /></td>
+            </tr><tr>
+                <th>Transition Level (ft)
+                </th><td><input /></td>
+           </tr>
+        </table>
+
+    <table id="Slut">
     <caption><h3>Miscellaneous flight notes</h3><caption>
     <tr><td>
     <textarea id="note" rows="10" cols="46"></textarea>
     </td></tr>
+    <tr><td>
+    <textarea id="ATC" rows="10" cols="46"></textarea>	
+    </td></tr>
     </table>
     </body>
 </html>
-

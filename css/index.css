@@ -5,3 +5,6 @@
             td.warn     { background-color: red;        text-align: center; }
             td.OK       { background-color: lightgreen; text-align: center; }
             .frq        { width: 38px; }
+
+textarea#ATC { width:100%}
+table#Slut {width: 100%}
