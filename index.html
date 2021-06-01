@@ -4,26 +4,27 @@
     <meta charset="utf-8" />
     <title>index.html</title>
     <style>
-        body {background-color: lightblue;}
+        body#home {background-color: lightblue; text-align: center;}
         .center {margin-left: auto; margin-right: auto;}
-        button  {font-size: 20px;}
+        button  {font-size: 24px; text-align: center; background-color: black; color: gold}
     </style>
+    <link rel="icon" href="favicon.ico">
 </head>
-<body>
-    
+<body id="home">
+
+    <br>
+    <h1>JC-Aviation home</h1>
+    <br>
     <table class="center">
-    <caption><h1>JC-Aviation home</h1></caption>
-    <tr><th colspan="2">
-        <img src="image002.jpg">
-    </th></tr>
-    <tr><td>
-        <br><br>
-        <button onclick="window.location.href='cp.html'">Captains ATC sheet</button>
-    </td><td>
-        <br><br>
-        <button onclick="window.location.href='fo.html'">First officers ATC sheet</button>
-    </td></tr>
+        <caption><img src="image002.jpg"></caption>
+        <tr><td>
+            <br><br>
+            <button onclick="window.location.href='cp.html'">Captains ATC sheet</button>
+        </td><td>
+            <br><br>
+            <button onclick="window.location.href='fo.html'">First officers ATC sheet</button>
+        </td></tr>
     </table>
-    
+
 </body>
 </html>
